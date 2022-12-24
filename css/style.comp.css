@@ -29,7 +29,7 @@ body {
   @media only screen and (max-width: 51.25em) {
     .container {
       grid-column: 1 / -1;
-      grid-template-rows: 6rem 80vh min-content 1fr repeat(3, min-content); } }
+      grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content; } }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
@@ -206,6 +206,9 @@ body {
   @media only screen and (max-width: 51.25em) {
     .header {
       grid-column: 1 / -1; } }
+  @media only screen and (max-width: 31.25em) {
+    .header {
+      padding: 4rem; } }
 
 .logo {
   display: grid;
@@ -245,11 +248,21 @@ body {
 
 .realtor {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: min-content max-content;
   align-items: center;
   column-gap: 2rem;
   row-gap: 3rem;
   margin-top: 3rem; }
+  @media only screen and (max-width: 51.25em) {
+    .realtor {
+      grid-template-columns: repeat(3, min-content max-content); } }
+  @media only screen and (max-width: 31.25em) {
+    .realtor {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      column-gap: 2rem;
+      row-gap: 3rem; } }
   .realtor__img {
     display: block;
     height: 7rem;
