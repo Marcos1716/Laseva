@@ -47,6 +47,9 @@ body {
   font-size: 4rem;
   font-style: italic;
   line-height: 1; }
+  @media only screen and (max-width: 31.25em) {
+    .heading-2 {
+      font-size: 3rem; } }
   .heading-2--light {
     color: #f9f7f6; }
   .heading-2--dark {
@@ -188,24 +191,30 @@ body {
     background-color: rgba(198, 153, 99, 0.95);
     backdrop-filter: blur(2px); } }
 
+@media only screen and (hover: none) {
+  .nav-open {
+    overflow: hidden; } }
+
 .header {
   grid-column: full-start/ col-end 6;
   background-image: linear-gradient(rgba(16, 29, 44, 0.92), rgba(16, 29, 44, 0.92)), url("../img/hero.jpeg");
   background-size: cover;
   background-position: center;
-  padding: 6rem;
-  padding-top: 4rem;
-  display: grid;
-  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
-  grid-template-columns: minmax(min-content, max-content);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 1rem; }
+  padding: 5rem 8rem 5rem; }
+  .header__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; }
   .header__btn {
-    justify-self: start;
-    align-self: start; }
+    align-self: flex-start;
+    margin-bottom: auto; }
   .header__logo {
     height: 3rem;
-    justify-self: center; }
+    align-self: center;
+    margin-bottom: auto; }
   @media only screen and (max-width: 51.25em) {
     .header {
       grid-column: 1 / -1; } }
@@ -229,7 +238,7 @@ body {
   color: #aaa;
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
-  gap: 1rem;
+  gap: 1.3rem;
   align-items: center; }
   .see-on::before, .see-on::after {
     content: "";
